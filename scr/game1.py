@@ -15,6 +15,9 @@ class RockPaperSiccors :
         return (self.get(user) == 'Rock' and cpu == 'Siccor') or (self.get(user) == 'Paper' and cpu == 'Rock') or (self.get(user) == 'Siccor' and cpu == 'Paper')
 
     def play(self):
+        print("Welcom Rock Paper Siccors")
+        for i in range(len(self.dic)):
+            print(f"[{i+1}]- {self.get(i+1)}")
         user = int(input("select"))
         cpu = self.getCup()
         if (self.winCondition(user, cpu)):

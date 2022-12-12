@@ -1,4 +1,4 @@
-from scr import game1
+from scr import menu
 
-game = game1.RockPaperSiccors()
+game = menu.MenuGame()
 game.play()
