@@ -16,8 +16,7 @@ class RockPaperSiccors :
 
     def play(self):
         print("Welcom Rock Paper Siccors")
-        for i in range(len(self.dic)):
-            print(f"[{i+1}]- {self.get(i+1)}")
+        self.opcions()
         user = int(input("select"))
         cpu = self.getCup()
         if (self.winCondition(user, cpu)):
@@ -26,3 +25,7 @@ class RockPaperSiccors :
             print(f"user={self.get(user)} vs cpu={cpu} - draw")
         else:
             print(f"user={self.get(user)} vs cpu={cpu} - lose User")
+
+    def opcions(self):
+        for i in range(len(self.dic)):
+            print(f"[{i+1}]- {self.get(i+1)}")
