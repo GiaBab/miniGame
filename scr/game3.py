@@ -1,14 +1,17 @@
 import random as rm, numpy as np
 
 class Queues:
-    def __init__(self, min:int, max:int):
+    def __init__(self):
         self.array = []
 
-    def generateRandomStack(self, maxLen, minLen):
-        for i in range(rm.randint(minLen, maxLen)):
-            self.array[i] = rm.randint(1,999)
+    def __repr__(self):
+        return str(self.get())
 
-    def get(self, num:int):
+    def generateRandomQueues(self, minLen, maxLen):
+        for i in range(rm.randint(minLen, maxLen)):
+            self.append(rm.randint(1, 999))
+
+    def getP(self, num:int):
         return self.get()[num]
     
     def get(self):
