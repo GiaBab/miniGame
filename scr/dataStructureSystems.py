@@ -7,10 +7,6 @@ class Queues:
     def __repr__(self):
         return str(self.get())
 
-    def generateRandomQueues(self, minLen, maxLen):
-        for i in range(rm.randint(minLen, maxLen)):
-            self.append(rm.randint(1, 999))
-
     def getP(self, num:int):
         return self.get()[num]
     
@@ -22,3 +18,7 @@ class Queues:
 
     def append(self, num:int):
         return self.array.append(num)
+
+def generateRandomQueues(arraySD, minLen, maxLen):
+        for i in range(rm.randint(minLen, maxLen)):
+            arraySD.append(rm.randint(1, 999))
