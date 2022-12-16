@@ -1,12 +1,12 @@
-import scr.game1, scr.game2
+import scr.game1 as g1, scr.game2 as g2
 
 class MenuGame:
     def __init__(self):
         self.opc = ["RPS", "RN"]
     
     def games(self):
-        item1 = scr.game1.RockPaperSiccors()
-        item2 = scr.game2.RandomNumers(0, 10)
+        item1 = g1.RockPaperSiccors()
+        item2 = g2.RandomNumers(0, 10)
         return item1, item2
 
     def play(self):

@@ -1,8 +1,8 @@
 import random as rm, numpy as np
 
 class Queues:
-    def __init__(self):
-        self.array = []
+    def __init__(self, array = []):
+        self.array = array
 
     def __repr__(self):
         return str(self.get())
