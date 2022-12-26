@@ -35,3 +35,8 @@ class Test(unittest.TestCase):
         self.assertFalse(rng.generate in [1,2,3,4,5,6,7,8,9,10])
         self.assertFalse(rng.generate in [1,2,3,4,5,6,7,8,9,10])
         self.assertFalse(rng.generate in [1,2,3,4,5,6,7,8,9,10])
+
+    def test_GenerateQueues(self):
+        queues = ds.Queues();ds.generateRandomArray(queues,1,10)
+        queues2 = ds.Queues();ds.generateRandomArray(queues2,1,10)
+        self.assertTrue(queues.get()!=queues2.get())
