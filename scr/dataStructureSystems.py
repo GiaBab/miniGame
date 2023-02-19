@@ -24,6 +24,12 @@ class Queues:
     def append(self, num:int):
         return self.array.append(num)
 
-def generateRandomArray(array, minLen, maxLen):
+    def sum(self):
+        return np.sum(self.get())
+
+    def len(self):
+        return len(self.array)
+
+def generateRandomArray(array, minLen:int, maxLen:int):
         for i in range(rm.randint(minLen, maxLen)):
             array.append(rm.randint(1, 999))

@@ -32,3 +32,4 @@ class RockPaperSiccors :
     def opcions(self):
         for i in range(len(self.dic)):
             print(f"[{i+1}]- {self.get(i+1)}")
+# %%

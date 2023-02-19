@@ -2,7 +2,7 @@ import scr.game1 as g1, scr.game2 as g2
 
 class MenuGame:
     def __init__(self):
-        self.opc = ["RPS", "RN"]
+        self.opc = ["RockPaperScissor", "RandomNumber"]
     
     def games(self):
         item1 = g1.RockPaperSiccors()
@@ -19,5 +19,4 @@ class MenuGame:
             case 2 : item2.play()
 
     def opcions(self):
-        for i in range(len(self.opc)) :
-            print(f"[{i+1}]-{self.opc[i]}")
+        [print(f"[{i+1}]-{opc}") for i, opc in enumerate(self.opc)]

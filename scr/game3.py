@@ -10,24 +10,34 @@ class WhoHaveMoreItems():
         return f"monky1{self.monoky1.getArray()} monky2{self.monoky2.getArray()} monky3{self.monoky3.getArray()}"
 
     def play(self):
-        for i in range(20):
+        i=0
+        while i < 5:
             self.monoky1.send(self.monoky2,self.monoky3,5)
             self.monoky2.send(self.monoky1,self.monoky3,3)
             self.monoky3.send(self.monoky2,self.monoky1,2)
+            i+=1
+
+    def len(self):
+        return [self.monoky1.len(), self.monoky2.len(), self.monoky3.len()]
+    
+    def whoHaveMoreItems(self):
+        for i in range(self.len()):
+            if self.len()[i] == max(self.len()) :
+                return i
+
+    def winCondition(self):
+        num = int(input()) 
+        if self.whoHaveMoreItems() == num :
+            print("you win :)")
+
 
 class Monoky():
     def __init__(self) -> None:
-        self.array = ds.Queues()
-        ds.generateRandomArray(self.array, 2, 5)
-
-    def getArray(self):
-        return self.array
+        self.items = ds.Queues()
+        ds.generateRandomArray(self.items, 2, 5)
 
     def append(self, num:int):
-        self.getArray().append(num)
-
-    def play(self, monoky1, monoky2, num):
-        self.send(monoky1, monoky2, num)
+        return self.getArray().append(num)
 
     def send(self, monoky1, monoky2, num):
         if self.getArray().get():
@@ -40,10 +50,6 @@ class Monoky():
     def pop(self):
         return self.getArray().pop()
 
-def operator():
-    pass
+    def len(self):
+        return self.items.len()
 
-gTest = WhoHaveMoreItems()
-print(gTest)
-gTest.play()
-print(gTest)
