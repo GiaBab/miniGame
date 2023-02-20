@@ -18,4 +18,4 @@ class MenuGame:
             case 3 : self.item3.play()
 
     def opcions(self):
-        [print(f"[{i+1}]-{opc}") for i, opc in enumerate(self.opc)]
+        [print(f"[{i}]-{opc}") for i, opc in enumerate(self.opc,1)]
