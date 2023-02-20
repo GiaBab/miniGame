@@ -1,4 +1,4 @@
-import dataStructureSystems as ds
+import scr.dataStructureSystems as ds
 
 class WhoHaveMoreItems():
     def __init__(self) -> None:
@@ -10,7 +10,7 @@ class WhoHaveMoreItems():
         return f"monky1{self.monoky1.get()} monky2{self.monoky2.get()} monky3{self.monoky3.get()}"
 
     def play(self):
-        print("You have 3 monoky in lab, monoky have items what is going to pass and you must do guess who monoky have more items.")
+        self.rule()
         i=0
         while i < 5:
             self.monoky1.send(self.monoky2,self.monoky3,5)
@@ -18,6 +18,15 @@ class WhoHaveMoreItems():
             self.monoky3.send(self.monoky2,self.monoky1,2)
             i+=1
         self.winCondition()
+
+    def rule(self):
+        print("You have 3 monoky in lab, monoky have items what is going to pass and you must do guess who monoky have more items.")
+        print("monoky1 if item is divisibility for 5, divide for 3 also sum 1, and pass to monoky2, else divide for 2 also take 1 and pass to monoky3")
+        print("monoky2 if item is divisibility for 3, divide for 3 also sum 1, and pass to monoky1, else divide for 2 also take 1 and pass to monoky3")
+        print("monoky3 if item is divisibility for 2, divide for 3 also sum 1, and pass to monoky1, else divide for 2 also take 1 and pass to monoky3")
+        print("this process repeat to 5 times")
+        print("ALERT: division don't have decimal")
+        print(self)
 
     def allLen(self):
         return [self.monoky1.len(), self.monoky2.len(), self.monoky3.len()]
@@ -59,11 +68,3 @@ class Monoky():
     def len(self):
         return self.items.len()
 
-def testing():
-    gTest = WhoHaveMoreItems()
-    print(gTest)
-    gTest.play()
-    print(gTest)
-    print(gTest.allLen())
-
-testing()
