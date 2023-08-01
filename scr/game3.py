@@ -6,7 +6,7 @@ class WhoHaveMoreItems():
         self.monoky2=Monoky()
         self.monoky3=Monoky()
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return f"monky1{self.monoky1.get()} monky2{self.monoky2.get()} monky3{self.monoky3.get()}"
 
     def play(self):
@@ -31,14 +31,14 @@ class WhoHaveMoreItems():
     def allLen(self):
         return [self.monoky1.len(), self.monoky2.len(), self.monoky3.len()]
     
-    def whoHaveMoreItems(self):
+    def whoHaveMoreItems(self) -> int:
         for i in range(len(self.allLen())):
             if self.allLen()[i] == max(self.allLen()) :
                 return i
 
     def winCondition(self):
         num = int(input()) 
-        if self.whoHaveMoreItems() == num :
+        if self.whoHaveMoreItems() == num-1 :
             print("you win :)")
         else :
             print("you lose :(")
@@ -48,7 +48,7 @@ class Monoky():
         self.items = ds.Queues()
         ds.generateRandomArray(self.items, 2, 5)
 
-    def append(self, num:int):
+    def append(self, num:int) -> int:
         return self.items.append(num)
 
     def send(self, monoky1, monoky2, num):
@@ -62,9 +62,17 @@ class Monoky():
     def get(self):
         return self.items.get()
 
-    def pop(self):
+    def pop(self) -> int:
         return self.items.pop()
 
-    def len(self):
+    def len(self) -> int:
         return self.items.len()
 
+'''def testing():
+    gTest = WhoHaveMoreItems()
+    print(gTest)
+    gTest.play()
+    print(gTest)
+    print(gTest.allLen())
+
+testing()'''

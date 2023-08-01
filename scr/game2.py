@@ -5,7 +5,7 @@ class RandomNumers:
         self.minInt = minInt
         self.maxInt = maxInt
     
-    def generate(self):
+    def generate(self) -> int:
         return rm.randint(self.minInt, self.maxInt)
 
     def play(self):

@@ -5,7 +5,7 @@ class Queues:
         if array == None : array = []
         self.array = array
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return str(self.get())
 
     def getP(self, num:int):
@@ -33,3 +33,24 @@ class Queues:
 def generateRandomArray(array, minLen:int, maxLen:int):
         for i in range(rm.randint(minLen, maxLen)):
             array.append(rm.randint(1, 999))
+
+def allEqual(iterator):
+    if not any(iterator):
+        return False
+    iterator = iter(iterator)
+    try:
+        first = next(iterator)
+    except StopIteration:
+        return True
+    return all(first == x for x in iterator)
+
+def rawToColumn(iterartor):
+    x,y = np.shape(iterartor)
+    arrayAux = np.zeros((x,y), str)
+    for i in range(x) :
+        for j in range(y): 
+            arrayAux[i][j] = iterartor[j][i]
+    return arrayAux
+
+def anyWhen(f, xs) -> bool:
+    return any([f(x) for x in xs])            

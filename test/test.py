@@ -1,6 +1,4 @@
-import unittest
-import scr.dataStructureSystems as ds, scr.game1 as g1, scr.game2 as g2
-
+import unittest, scr.dataStructureSystems as ds, scr.game1 as g1, scr.game2 as g2
 rps = g1.RockPaperSiccors()
 rng = g2.RandomNumers(1, 10)
 
